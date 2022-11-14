@@ -30,7 +30,7 @@ const showSuperheroInfo = (superhero) => {
     })
     const imgContainer = document.getElementById('img-container')
     // inserts the `h1`, `img` and `p` tags into the DOM
-    imgContainer.innerHTML = `${superheroName} <img src="${superhero.image.url}" style= "border-radius:           5px" width=200/> ${superheroStats.join('')}`
+    imgContainer.innerHTML = `${superheroName} <img src="${superhero.image.url}" style= "border-radius: 5px" width=200/> ${superheroStats.join('')}`
 }
 //---------------- search for superhero -------------------
 const searchForSuperHero = () => {
