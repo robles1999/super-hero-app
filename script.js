@@ -18,8 +18,8 @@ const getSuperHero = (heroID) => {
             showSuperheroInfo(json)
         })
 }
-//---------------- superhero emoji ------------------------
-const superheroEmoji = (superpower) => {
+//---------------- superhero stats emoji ------------------------
+const superheroStatsEmoji = (superpower) => {
     console.log('superpower: ' + superpower)
     const emojiIcon = {
         intelligence: "🧠",
@@ -35,7 +35,7 @@ const superheroEmoji = (superpower) => {
 const showSuperheroInfo = (superhero) => {
     const superheroName = `<h1>${superhero.name}</h1>`
     const superheroStats = Object.keys(superhero.powerstats).map(stat => {
-        return `<p>${superheroEmoji(stat)}${stat.toLocaleUpperCase()}: ${superhero.powerstats[stat]}</p>`
+        return `<p>${superheroStatsEmoji(stat)}${stat.toLocaleUpperCase()}: ${superhero.powerstats[stat]}</p>`
     })
     const imgContainer = document.getElementById('img-container')
     // inserts the `h1`, `img` and `p` tags into the DOM
