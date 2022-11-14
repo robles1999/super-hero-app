@@ -2,11 +2,8 @@ const SUPERHERO_TOKEN = '10229784321976436'
 const BASE_URL = `https://www.superheroapi.com/api.php/${SUPERHERO_TOKEN}`
 const SEARCH_BASE_URL =
     `https://www.superheroapi.com/api.php/${SUPERHERO_TOKEN}/search/`
-//---------------- Clear power stat -----------------------
-const clearPowerStat = () => {
-    const el = document.getElementById('power-stat')
-    el.innerText = ''
-}
+
+
 //---------------- Clear search input ---------------------
 const clearSearchInput = () => {
     const clearInput = document.getElementById('search-input') // select input box
@@ -14,7 +11,6 @@ const clearSearchInput = () => {
 }
 //---------------- get superhero --------------------------
 const getSuperHero = (heroID) => {
-    clearPowerStat()
     // get hero
     fetch(`${BASE_URL}/${heroID}`)
         .then(response => response.json())
@@ -30,7 +26,8 @@ const showSuperheroInfo = (superhero) => {
     })
     const imgContainer = document.getElementById('img-container')
     // inserts the `h1`, `img` and `p` tags into the DOM
-    imgContainer.innerHTML = `${superheroName} <img src="${superhero.image.url}" style= "border-radius: 5px" width=200/> ${superheroStats.join('')}`
+    imgContainer.innerHTML = `${superheroName} <img src="${superhero.image.url}" style= "border-radius: 5px" width=200/> 
+    ${superheroStats.join('')}`
 }
 //---------------- search for superhero -------------------
 const searchForSuperHero = () => {
